@@ -1,0 +1,165 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Schéma de principe d'un régulateur de ventilateur de PC"
+Date "2022-05-26"
+Rev "1.0"
+Comp "Cool Inc."
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:Q_NPN_CBE Q1
+U 1 1 6290018D
+P 5700 3500
+F 0 "Q1" H 5891 3546 50  0000 L CNN
+F 1 "TIP29C" H 5891 3455 50  0000 L CNN
+F 2 "" H 5900 3600 50  0001 C CNN
+F 3 "~" H 5700 3500 50  0001 C CNN
+	1    5700 3500
+	1    0    0    -1  
+$EndComp
+Text Notes 7300 6350 0    50   ~ 0
+NOTE : N’importe quel NPN dont son Ice tiens la charge du ventilateur peut faire l’affaire
+$Comp
+L Motor:Fan M1
+U 1 1 629008EE
+P 6750 4300
+F 0 "M1" H 6908 4396 50  0000 L CNN
+F 1 "Fan" H 6908 4305 50  0000 L CNN
+F 2 "" H 6750 4310 50  0001 C CNN
+F 3 "~" H 6750 4310 50  0001 C CNN
+	1    6750 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C2
+U 1 1 62901566
+P 5800 4250
+F 0 "C2" H 5918 4296 50  0000 L CNN
+F 1 "470uF" H 5918 4205 50  0000 L CNN
+F 2 "" H 5838 4100 50  0001 C CNN
+F 3 "~" H 5800 4250 50  0001 C CNN
+	1    5800 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C1
+U 1 1 629024EE
+P 5200 4250
+F 0 "C1" H 5318 4296 50  0000 L CNN
+F 1 "10uF" H 5318 4205 50  0000 L CNN
+F 2 "" H 5238 4100 50  0001 C CNN
+F 3 "~" H 5200 4250 50  0001 C CNN
+	1    5200 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 62902D93
+P 4600 2800
+F 0 "R1" H 4670 2846 50  0000 L CNN
+F 1 "100" H 4670 2755 50  0000 L CNN
+F 2 "" V 4530 2800 50  0001 C CNN
+F 3 "~" H 4600 2800 50  0001 C CNN
+	1    4600 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 629032D4
+P 4600 4250
+F 0 "R2" H 4670 4296 50  0000 L CNN
+F 1 "10K" H 4670 4205 50  0000 L CNN
+F 2 "" V 4530 4250 50  0001 C CNN
+F 3 "~" H 4600 4250 50  0001 C CNN
+	1    4600 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 62903B01
+P 4600 5000
+F 0 "#PWR02" H 4600 4750 50  0001 C CNN
+F 1 "GND" H 4605 4827 50  0000 C CNN
+F 2 "" H 4600 5000 50  0001 C CNN
+F 3 "" H 4600 5000 50  0001 C CNN
+	1    4600 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR01
+U 1 1 62904736
+P 4600 2100
+F 0 "#PWR01" H 4600 1950 50  0001 C CNN
+F 1 "VCC" H 4615 2273 50  0000 C CNN
+F 2 "" H 4600 2100 50  0001 C CNN
+F 3 "" H 4600 2100 50  0001 C CNN
+	1    4600 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_POT RV1
+U 1 1 62905B7C
+P 4600 3500
+F 0 "RV1" H 4530 3546 50  0000 R CNN
+F 1 "5K" H 4530 3455 50  0000 R CNN
+F 2 "" H 4600 3500 50  0001 C CNN
+F 3 "~" H 4600 3500 50  0001 C CNN
+	1    4600 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 2100 4600 2400
+Wire Wire Line
+	4600 2950 4600 3350
+Wire Wire Line
+	4600 3650 4600 4100
+Wire Wire Line
+	4600 4400 4600 4700
+Wire Wire Line
+	4750 3500 5200 3500
+Wire Wire Line
+	5200 4100 5200 3500
+Connection ~ 5200 3500
+Wire Wire Line
+	5200 3500 5500 3500
+Wire Wire Line
+	5800 4100 5800 3850
+Wire Wire Line
+	5800 3300 5800 2400
+Wire Wire Line
+	5800 2400 4600 2400
+Connection ~ 4600 2400
+Wire Wire Line
+	4600 2400 4600 2650
+Wire Wire Line
+	5200 4400 5200 4700
+Wire Wire Line
+	5200 4700 4600 4700
+Connection ~ 4600 4700
+Wire Wire Line
+	4600 4700 4600 5000
+Wire Wire Line
+	5800 4400 5800 4700
+Wire Wire Line
+	5800 4700 5200 4700
+Connection ~ 5200 4700
+Wire Wire Line
+	6750 4000 6750 3850
+Wire Wire Line
+	6750 3850 5800 3850
+Connection ~ 5800 3850
+Wire Wire Line
+	5800 3850 5800 3700
+Wire Wire Line
+	6750 4500 6750 4700
+Wire Wire Line
+	6750 4700 5800 4700
+Connection ~ 5800 4700
+$EndSCHEMATC
